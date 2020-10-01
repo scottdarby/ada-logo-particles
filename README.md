@@ -1,3 +1,3 @@
 <h1 align="center">
-  String Field
+  ADA Logo Particle Experiment
 </h1>
