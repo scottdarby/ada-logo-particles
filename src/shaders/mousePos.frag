@@ -27,9 +27,9 @@ float distToSegment( vec2 x1, vec2 x2, vec2 p ) {
 
 void main() {
 
-    vec4 color = texture2D(uMousePosTexture, vUv) * 0.93;
+    vec4 color = texture2D(uMousePosTexture, vUv) * 0.96;
 
-    float dist = distToSegment(uPrevMousePos* vec2(uAspect, 1.0), uMousePos* vec2(uAspect, 1.0), vUv * vec2(uAspect, 1.0));
+    float dist = distToSegment(uPrevMousePos * vec2(uAspect, 1.0), uMousePos * vec2(uAspect, 1.0), vUv * vec2(uAspect, 1.0));
 
     if (dist < uRadius) {
         color.z += pow(1.0-dist, 40.0) * 0.5;

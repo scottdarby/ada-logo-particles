@@ -56,18 +56,14 @@ void main() {
     newPos /= newPos.w;
 
     vec4 mousePos = texture2D(uMousePosTexture, ((newPos.xy + 1.0) / 2.0)  );
-    transformed.z += mousePos.z * 0.1;
+    if (mousePos.z > 0.1) {
+        transformed.z += mousePos.z * 0.1;
+    }
 
 	#include <morphtarget_vertex>
-	// #include <project_vertex>
-    vec4 mvPosition = vec4( transformed, 1.0 );
-    mvPosition = modelViewMatrix * mvPosition;
+	#include <project_vertex>
 
-    gl_Position = projectionMatrix * mvPosition;
-
-    
-
-	gl_PointSize = size;
+	gl_PointSize = size * (scale * 0.001);
 
 	#ifdef USE_SIZEATTENUATION
 

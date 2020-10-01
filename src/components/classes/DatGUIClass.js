@@ -7,7 +7,7 @@ class DatGUIClass extends BaseClass {
   init () {
     if (this.config.dev.debug) {
       this.gui = new dat.GUI({ width: 300 })
-      // this.gui.close()
+      this.gui.close()
     }
 
     super.init()

@@ -110,9 +110,10 @@ class Main extends mixin(EventEmitter, Component) {
 
     ControlsClass.getInstance().renderFrame({ dt: dt })
     ParticleClass.getInstance().renderFrame({ dt: dt })
-    InputClass.getInstance().renderFrame({ dt: dt })
 
     this.composer.render()
+
+    InputClass.getInstance().renderFrame({ dt: dt })
   }
 
   addEvents () {
